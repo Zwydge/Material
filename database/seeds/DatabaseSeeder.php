@@ -1,6 +1,6 @@
 <?php
 
-use App\User;
+use App\Users;
 use App\Materials;
 use App\Takes;
 use Illuminate\Database\Seeder;
@@ -27,7 +27,7 @@ class UsersSeeder extends Seeder {
     {
         DB::table('users')->delete();
 
-        User::create(array(
+        Users::create(array(
             'email' => 'test@test.fr',
             'password' => 'test'
         ));

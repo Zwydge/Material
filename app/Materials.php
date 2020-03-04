@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Materials extends Model
 {
-    //
+    protected $fillable = [
+        'id','name'
+    ];
+    public $timestamps = false;
 }

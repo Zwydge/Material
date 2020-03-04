@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Takes extends Model
+class Users extends Model
 {
     protected $fillable = [
-        'id','user_id','materials_id'
+        'id','email','password'
     ];
     public $timestamps = false;
 }
