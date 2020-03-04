@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('register', 'Api\Auth\RegisterController@register');
+Route::post('login', 'Api\Auth\LoginController@login');
+
+Route::get('materials/get', 'Api\MaterialsController@get');
+Route::delete('materials/delete', 'Api\MaterialsController@delete');
+Route::post('takes/create', 'Api\TakesController@create');
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

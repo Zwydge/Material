@@ -29,7 +29,7 @@ class UsersSeeder extends Seeder {
 
         Users::create(array(
             'email' => 'test@test.fr',
-            'password' => 'test'
+            'password' => bcrypt('test')
         ));
     }
 }

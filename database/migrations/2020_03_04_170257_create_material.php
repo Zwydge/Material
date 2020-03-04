@@ -27,6 +27,6 @@ class CreateMaterial extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('material');
+        Schema::dropIfExists('materials');
     }
 }

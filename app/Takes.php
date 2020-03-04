@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Takes extends Model
 {
     protected $fillable = [
-        'id','user_id','materials_id'
+        'user_id','material_id'
     ];
     public $timestamps = false;
 }
