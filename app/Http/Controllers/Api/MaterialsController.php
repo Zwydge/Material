@@ -19,4 +19,13 @@ class MaterialsController extends Controller
         $materials = Materials::destroy(request('id'));
         return response()->json(['data'=>'success'],200, [], JSON_NUMERIC_CHECK);
     }
+
+    public function create(Request $request){
+
+        $mat= Materials::create([
+            'name' => request('name')
+        ]);
+
+        return response()->json(['data'=>$mat],200, [], JSON_NUMERIC_CHECK);
+    }
 }

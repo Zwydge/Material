@@ -17,11 +17,11 @@ class LoginController extends Controller
                 return response()->json(['data'=>'connected'],200, [], JSON_NUMERIC_CHECK);
             }
             else{
-                return response()->json(['data'=>'Mauvais mot de passe'],200, [], JSON_NUMERIC_CHECK);
+                return response()->json(['data'=>'Mauvais mot de passe'],401, [], JSON_NUMERIC_CHECK);
             }
         }
         else{
-            return response()->json(['data'=>'Cet email n\'existe pas'],200, [], JSON_NUMERIC_CHECK);
+            return response()->json(['data'=>'Cet email n\'existe pas'],401, [], JSON_NUMERIC_CHECK);
         }
     }
 }

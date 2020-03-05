@@ -18,6 +18,7 @@ Route::post('register', 'Api\Auth\RegisterController@register');
 Route::post('login', 'Api\Auth\LoginController@login');
 
 Route::get('materials/get', 'Api\MaterialsController@get');
+Route::post('materials/add', 'Api\MaterialsController@add');
 Route::delete('materials/delete', 'Api\MaterialsController@delete');
 Route::post('takes/create', 'Api\TakesController@create');
 
