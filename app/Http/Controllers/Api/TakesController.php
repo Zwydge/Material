@@ -10,6 +10,8 @@ class TakesController extends Controller
 {
     public function create(Request $request){
 
+        //create a new take with request informations
+
         $takes = Takes::create([
             'user_id' => request('user_id'),
             'material_id' => request('material_id')

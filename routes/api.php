@@ -14,14 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+//Route are out the middleware because there is no Auth system
 Route::post('register', 'Api\Auth\RegisterController@register');
 Route::post('login', 'Api\Auth\LoginController@login');
 
 Route::get('materials/get', 'Api\MaterialsController@get');
 Route::post('materials/add', 'Api\MaterialsController@add');
-Route::delete('materials/delete', 'Api\MaterialsController@delete');
+Route::post('materials/delete', 'Api\MaterialsController@delete');
 Route::post('takes/create', 'Api\TakesController@create');
-
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

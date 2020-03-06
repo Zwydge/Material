@@ -10,17 +10,26 @@ class MaterialsController extends Controller
 {
     public function get(){
 
+        //get all materials
+
         $materials = Materials::all();
         return response()->json(['data'=>$materials],200, [], JSON_NUMERIC_CHECK);
     }
 
     public function delete(Request $request){
 
+        //delete a materiel with his id
+
         $materials = Materials::destroy(request('id'));
-        return response()->json(['data'=>'success'],200, [], JSON_NUMERIC_CHECK);
+        $success = array([
+            "type"=>"success"
+        ]);
+        return response()->json(['data' => $success],200, [], JSON_NUMERIC_CHECK);
     }
 
-    public function create(Request $request){
+    public function add(Request $request){
+
+        //add a new material with request informations
 
         $mat= Materials::create([
             'name' => request('name')

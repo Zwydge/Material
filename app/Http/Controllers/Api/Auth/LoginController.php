@@ -10,18 +10,21 @@ use Illuminate\Support\Facades\Hash;
 class LoginController extends Controller
 {
     public function login(Request $request){
-
-        $user = Users::where('email', request('email'))->get('password');
+        //get user informations with email
+        $user = Users::where('email', request('email'))->get();
         if(!empty($user[0])){
             if (Hash::check(request('password'), $user[0]['password'])) {
-                return response()->json(['data'=>'connected'],200, [], JSON_NUMERIC_CHECK);
+                //if password is correct
+                return response()->json(['data'=>$user],200, [], JSON_NUMERIC_CHECK);
             }
             else{
+                //if password didn't match
                 return response()->json(['data'=>'Mauvais mot de passe'],401, [], JSON_NUMERIC_CHECK);
             }
         }
         else{
-            return response()->json(['data'=>'Cet email n\'existe pas'],401, [], JSON_NUMERIC_CHECK);
+            //if email doesn't exist
+            return response()->json(['data'=>'Cet email n\'existe pas'],402, [], JSON_NUMERIC_CHECK);
         }
     }
 }
